@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>天气查询</title>
+
+    <link rel="stylesheet" href="">
+    <!-- <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" /> -->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- vue.js -->
+    <!-- <script type="text/javascript" src="https://unpkg.com/vue"></script> -->
+    <!-- layui -->
+    <!-- <script src="https://www.layuicdn.com/layui/layui.js"></script> -->
+
+    <style type="text/css" media="screen">
+        body {
+            padding: 20px 0;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2F4056;
+            padding-bottom: 20px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layui-container">
+        <div class="title">腾讯接口天气查询</div>
+        <form id="weather" class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">查询城市</label>
+                <div class="layui-input-block">
+                    <!-- 可以在用户输入时自动搜索显示搜索列表，用户选择地址在查询天气 -->
+                    <input type="text" name="city"  placeholder="请输入查询的城市"
+                        autocomplete="off"  value="龙岗">
+                         <button >立即提交</button>
+                    <button type="reset" >重置</button>
+                </div>
+                <!-- class="layui-input" -->
+            </div>
+
+            <div class="layui-form-item">
+                <div >
+                   
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        $('#weather').submit(function () {
+            //获取表单数据
+            var data = {};
+            var t = $(this).serializeArray();
+            console.log(t);
+            $.each(t, function () {
+                data[this.name] = this.value;
+            });
+            console.log(data);
+
+            var city = data.city;
+            if (city) {
+                get_city(city);
+            }
+            return false;
+        });
+
+        // 只能搜索市、区、县
+        function get_city(city, source = 'pc') {
+            $.ajax({
+                url: 'https://wis.qq.com/city/like',
+                type: 'get',
+                data: {
+                    source: source,
+                    city: city
+                },
+                dataType: 'jsonp',
+                success: function (res) {
+                    if (res.status == 200 && res.data) {
+                        console.log(res);
+                        console.log(res.data); //搜索json列表
+
+                        for (var key in res.data) { //遍历接口
+                            console.log(res.data[key]);
+                            get_weather(res.data[key]);
+                        }
+
+                    }
+                }
+
+            });
+
+        }
+
+
+        /*
+        * 天气查询
+        * 参数介绍
+        * source: pc  //接口类型pc或者wx
+        * callback: 回调函数 不传直接返回json
+        * weather_type参数(查询类型，多个|分隔): 
+        *   observe 当前天气
+        *   alarm 预警
+        *   tips 天气介绍
+        *   index 穿衣，舒适度等等...
+        *   air 空气质量
+        *   rise 日出
+        */
+        function get_weather(data, source = 'pc', weather_type = 'observe|forecast_1h|forecast_24h|index|alarm|limit|tips|air|rise', callback = '') {
+            let address = data.split(',');
+            let province = address[0], city = address[1], county = address[2] || '';
+            $.ajax({
+                url: 'https://wis.qq.com/weather/common',
+                type: 'get',
+                data: {
+                    source: source,
+                    weather_type: weather_type,
+                    province: province,
+                    city: city,
+                    county: county
+                },
+                dataType: 'jsonp',
+                success: function (res) {
+                    if (res.status == 200 && res.data) {
+                        console.log(res);
+
+                        //当前天气
+                        var observe = res.data.observe;
+                        var text = '天气：' + observe.weather + '，气温：' + observe.degree + '℃,' + '，湿度：' + observe.humidity + '，气压：' + observe.pressure + '，风力：' + observe.wind_power;
+
+                        // layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element'], function () {
+                        //     var laydate = layui.laydate //日期
+                        //         , laypage = layui.laypage //分页
+                        //         , layer = layui.layer //弹层
+                        //         , table = layui.table //表格
+                        //         , carousel = layui.carousel //轮播
+                        //         , upload = layui.upload //上传
+                        //         , element = layui.element; //元素操作 等等...
+
+                            /*layer弹出一个示例*/
+                            // layer.msg(text);
+                        
+                    }
+                }
+
+            });
+        }
+
+    </script>
+</body>
+
+</html>

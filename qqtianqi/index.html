@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考核</title>
+    <script src="/JS/jQuery.min.js"></script>
+    <link rel="preload" href="//at.alicdn.com/t/font_2550499_syj3m4c8ovd.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/Normalize.css">
+    <link rel="stylesheet" href="/test/test.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2550499_syj3m4c8ovd.css">
+    <script src="./fonts/iconfont.js"></script>
+    <!-- <script src="//at.alicdn.com/t/font_2550499_syj3m4c8ovd.js"></script> -->
+
+</head>
+
+<body>
+    <div class="cover" android:clickable="true"></div>
+
+
+    <!-- 第一部分 -->
+    <header>
+        <!-- 地区搜索 -->
+        <div class="search">
+            <div class="search-box">
+                <div class="box">
+                    <svg class="icon sousuo" aria-hidden="true">
+                        <use xlink:href="#icon-sousuo"></use>
+                    </svg>
+                    <form action="#" id="search">
+                        <input type="search" name="city" id="city" autocomplete="on" placeholder="搜索地区">
+
+                    </form>
+
+                </div>
+                <div class="cancle" id="cancle">
+                    <p>取消</p>
+                </div>
+            </div>
+            <div class="location">
+                <div class="blank">
+
+
+                    <div class="current-location">
+                        <p>当前定位</p>
+
+                        <ol>
+                            <li>南岸区</li>
+                        </ol>
+                    </div>
+                    <div class="hot-location">
+                        <p>热门城市</p>
+                        <ol>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                            <li>城市</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 转发 -->
+        <div class="share">
+            <div class="img">
+                <ol>
+                    <li><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixin"></use>
+                        </svg>
+                        <p>微信</p>
+                    </li>
+                    <li><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shejiaotubiao-02
+"></use>
+                        </svg>
+                        <p>朋友圈</p>
+                    </li>
+                    <li><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                        <p>QQ</p>
+                    </li>
+                    <li><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-QQkongjian"></use>
+                        </svg>
+                        <p>QQ空间</p>
+                    </li>
+                    <li><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinlangweibo"></use>
+                        </svg>
+                        <p>新浪微博</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="cancle" id="cancle-share">
+                <p>取消</p>
+            </div>
+
+        </div>
+        <!-- 现在的天气 -->
+        <div class="background">
+
+
+            <!-- 顶部 -->
+            <div class="top">
+                <span class="iconfont icon-jiantou"></span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-location"></use>
+                </svg>
+                <p id="current-location">重庆市 南岸区</p>
+                <span class="iconfont icon-zhuanfa"></span>
+            </div>
+            <div class="air">
+                <div class="content">
+                    <p>32</p>
+                    <p>优</p>
+                </div>
+            </div>
+            <!-- 空气质量 -->
+            <div class="aqi">
+                <div class="x">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cancel01"></use>
+                    </svg>
+                </div>
+                <div class="num">
+                    <p>空气质量指数</p>
+                    <p>42</p>
+                    <div class="level">优
+                    </div>
+                </div>
+                <div class="index">
+                    <ul>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>PM2.5</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>PM10</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>SO2</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>NO2</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>O3</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>22</p>
+                                <p>CO</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="middle">
+                <p>&deg;</p>
+                <p></p>
+                <p></p>
+                <p class="sentence">现在的温度比较舒适~</p>
+                <p class="sentence">第二句</p>
+            </div>
+        </div>
+        <!-- 今天和明天的天气 -->
+        <nav>
+            <div class="today">
+                <div class="today-1">
+                    <p>今天</p>
+                    <p>阴转中雨</p>
+                </div>
+                <div class="today-2">
+                    <span></span>
+                    <span class="iconfont "></span>
+                </div>
+
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="tomarrow">
+                <div class="tomarrow-1">
+                    <p>明天</p>
+                    <p>多云转小雨</p>
+                </div>
+                <div class="tomarrow-2">
+                    <p>28/20°</p>
+                    <span class="iconfont "></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 分时天气 -->
+    <div class="hour">
+        <ol>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p>2:00</p>
+                <span class="iconfont "></span>
+                <p>90&deg;</p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p>90&deg;</p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+                <span class="iconfont "></span>
+                <p></p>
+            </li>
+        </ol>
+    </div>
+    <!-- 一周的天气 -->
+    <div class="week">
+        <ol>
+            <li>
+                <p>昨天</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>今天</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                    <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>明天</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+            <span class="iconfont "></span>
+                </div>
+                <div>
+                    <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>后天</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                    <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>星期</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                    <span class="iconfont "></span>
+                    <p>天气</p>
+
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>星期</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>星期</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+            <li>
+                <p>星期</p>
+                <p>日期</p>
+                <div>
+                    <p>天气</p>
+                    <span class="iconfont "></span>
+                </div>
+                <div>
+                <span class="iconfont "></span>
+                    <p>天气</p>
+                </div>
+                <p>风</p>
+                <p></p>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 提示 -->
+    <div class="bigbox">
+        <footer>
+
+            <div class="page page1">
+                <ul>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+                        <div class="detail">
+                            <span>指数</span>
+                            <p>有降水，请带上雨伞，如果你喜欢雨中漫步，享受大自然给予的温馨和快乐，在短时间外出可收起雨伞。</p>
+                            <div class="know">
+                                我知道了
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="page page2">
+                <ul>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item even">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                    <li class="item odd">
+                        <div class="tips">
+                            <div class="icon"></div>
+                            <p>穿衣</p>
+                            <p>穿衣</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div class="point">
+        <ol>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <!-- 申明 -->
+    <div class="declaration">
+        <a href="http://www.weather.com.cn/">数据来源于中国天气网</a>
+        <p>Copyright 1998 - 2021 Tencent. All Rights Reserved</p>
+    </div>
+</body>
+<link rel="stylesheet" href="/JS/animate.js">
+<script src="/JS/index.js"></script>
+
+</html>

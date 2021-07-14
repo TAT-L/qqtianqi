@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 遮罩 */
+.cover {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.2;
+    
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: rgb(244, 244, 244);
+
+}
+
+.search {
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    display: none;
+}
+.search .search-box{
+    position: relative;
+    height: 7%;
+    border-bottom: 1px solid #ccc;
+}
+.search .search-box .box {
+    overflow: hidden;
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgb(242, 242, 242);
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+.search .search-box .box form{
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+.search .search-box .box svg {
+    margin-top: 7px;
+    margin-left: 6px;
+    
+    float: left;
+    font-size: 19px;
+}
+.search .search-box .box input{
+    position: relative;
+    height: 100%;
+    width: 80%;
+    position: relative;
+    left: 5px;
+    border-style: none;
+    outline: none;
+    background-color: rgb(242, 242, 242);
+    padding-bottom: 3px;
+}
+.search .search-box .box input::placeholder{
+    font-size: 13px;
+   
+}
+.search .search-box .cancle{
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    font-size: 15px;
+}
+.search .search-box.cancle p{
+    
+}
+.search .location {
+    height: 93%;
+}
+.location .current-location {
+    height: 20%;
+}
+.location .current-location p {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.location .current-location ol li{
+    margin-top: 5%;
+    background-color: rgb(242, 242, 242);
+    height: 30px;
+    width:30%;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.location .hot-location p {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.location .hot-location ol {
+    overflow: hidden;
+}
+
+.location .hot-location ol li {
+    margin-top: 5%;
+    background-color: rgb(242, 242, 242);
+    height: 30px;
+    width: 30%;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    float: left;
+    margin-left: 8px;
+}
+
+.background {
+    width: 100%;
+    height: 666px;
+    background: url(../images/shachen.jpg) no-repeat;
+    background-size: cover;
+
+}
+.share {
+    z-index: 3;
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 23%;
+    
+}
+.share {
+    display: none;
+}
+.share .img{
+    border-top: 1px solid #ccc;
+    height: 60%;
+}
+.share .img ol li {
+    padding-top: 5%;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.share .img ol li svg {
+    font-size: 30px;
+}
+.share .img ol li p{
+    font-size: 5px;
+    text-align: center;
+    
+}
+.share .cancle {
+    height: 40%;
+    border-top: 1px solid #ccc;
+}
+.share .cancle p {
+    text-align: center;
+    font-size: 17px;
+    padding-top: 5%;
+}
+
+.top {
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 20px;
+    margin-left: 10px;
+}
+
+.top p {
+    list-style: none;
+    display: inline-block;
+    color: white;
+    padding-top: 4px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    color: orange;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.top .icon-jiantou {
+    float: left;
+    font-size: 2em;
+    color: white;
+}
+
+.top .icon-zhuanfa {
+    float: right;
+    font-size: 1.5em;
+    color: white;
+
+}
+
+.air {
+    z-index: 0;
+    position: relative;
+    margin: 40px 0px 0px 15px;
+    background-color: rgb(162, 215, 101);
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px rgb(74, 69, 69);
+}
+
+.air .content {
+    position: absolute;
+    font-size: 0.5em;
+    padding: 10px 12px;
+    color: white;
+}
+
+.aqi {
+    position: fixed;
+    border-radius: 20px;
+    width: 250px;
+    height: 353px;
+    left: 50%;
+    margin-left: -125px;
+    background-color: pink;
+    float: left;
+    background-image: url(../images/shachen.jpg);
+    display: none;
+    z-index: 2;
+}
+
+.aqi .x svg {
+    float: right;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.aqi .num {
+    margin-left: 80px;
+    margin-top: 50px;
+    color: white;
+}
+
+.aqi .num :nth-child(1) {
+    font-size: 13px;
+}
+
+.aqi .num :nth-child(2) {
+    font-size: 50px;
+    padding: 20px 10px;
+}
+
+.aqi .num .level {
+    width: 50px;
+    height: 30px;
+    background-color: rgb(162, 215, 101);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 13px;
+}
+
+.aqi .index {
+
+    left: 20px;
+    height: 105px;
+    margin-top: 59px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.aqi .index ul li {
+    float: left;
+    width: 81px;
+    height: 50px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.aqi .index ul li div :nth-child(2) {
+    padding-top: 5px;
+    font-size: xx-small;
+    color: #ccc;
+}
+
+
+.aqi .index ul li div {
+    text-align: center;
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.middle {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.middle :nth-child(1) {
+    font-size: 45px;
+}
+
+.middle :nth-child(2) {
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.middle :nth-child(3) {
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.middle :nth-child(4) {
+    font-size: 14px;
+    padding-top: 60px;
+}
+
+nav {
+    margin-top: -1px;
+    overflow: hidden;
+    height: 115px;
+    background-color: white;
+    box-shadow: 1px 1px 3px #ccc;
+}
+
+.today {
+    float: left;
+    width: 49%;
+    overflow: hidden;
+}
+
+.today .today-1 {
+    width: 35%;
+    float: left;
+    padding: 35px 20px;
+}
+
+.today .today-1 :nth-child(1) {
+    padding-bottom: 15px;
+}
+
+.today .today-2 {
+    margin-top: 30px;
+    overflow: hidden;
+    float: right;
+    width: 35%;
+    /* padding: 30px 5px 0 28px; */
+    /* margin-right: -12px; */
+}
+
+.today .today-2 svg {
+    display: block;
+    padding: 14px;
+}
+
+.yintian {
+    font-size: 28px;
+}
+
+.tomarrow {
+    overflow: hidden;
+    float: right;
+    width: 49%;
+
+}
+
+.tomarrow .tomarrow-1 {
+    width: 49%;
+    float: left;
+
+    margin-top: 30px;
+    /* margin-left: 10px; */
+    /* padding-left: 10px; */
+    /* padding: 30px 0; */
+
+}
+
+.tomarrow .tomarrow-1 :nth-child(1) {
+    padding-bottom: 15px;
+}
+
+.tomarrow .tomarrow-1 :nth-child(n) {
+    padding-left: 10px;
+
+}
+
+.tomarrow .tomarrow-2 {
+    margin-top: 30px;
+    width: 45%;
+    float: right;
+
+}
+
+.tomarrow .tomarrow-2 :nth-child(n) {
+    padding-left: 10px;
+}
+
+
+.tomarrow .tomarrow-2 svg {
+    display: block;
+}
+
+.qintian {
+    font-size: 28px;
+}
+
+nav .line {
+    width: 1%;
+    margin-top: 35px;
+    float: left;
+    height: 50px;
+    border-left: 2px solid #ccc;
+}
+
+.hour {
+    white-space: nowrap;
+    height: 130px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px #ccc;
+}
+
+.hour ol {
+    overflow-x: auto;
+}
+
+.hour li {
+    margin: 15px;
+    display: inline-block;
+}
+
+.hour li p {
+    padding-bottom: 18px;
+    font-size: 13px;
+}
+
+.hour li svg {
+    padding-bottom: 15px;
+    /* font-size: 13px; */
+}
+
+.hour li :last-child {
+    padding-left: 4px;
+}
+
+.week {
+    margin-top: 15px;
+    white-space: nowrap;
+    /* height: 450px; */
+    background-color: #fff;
+}
+
+.week ol {
+    overflow-x: auto;
+    margin: 20px 0 0 20px;
+}
+
+.week ol li {
+    padding-top: 20px;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.week ol li>p {
+    font-size: 1px;
+}
+
+.week ol li :nth-child(2) {
+    padding-top: 2px;
+    padding-bottom: 20px;
+}
+
+.week ol li div p {
+    padding-bottom: 20px;
+}
+
+.week ol li :nth-child(3) {
+    margin-bottom: 120px;
+}
+
+.week ol li :nth-child(3) p {
+    font-size: 14px;
+}
+
+.week ol li div svg {
+    padding-bottom: 20px;
+}
+
+.week ol li :nth-child(4) p {
+    font-size: 14px;
+}
+
+.bigbox {
+    /* width: 300%; */
+    /* position: relative; */
+    /* right: 100%; */
+    /* background-color: red; */
+    overflow: hidden;
+}
+
+footer {
+    /* pointer-events: none; */
+    position: relative;
+
+    background-color: #fff;
+    margin-top: 20px;
+    height: 233px;
+    width: 200%;
+    margin-left: 1px;
+    overflow: hidden;
+    /* white-space: nowrap; */
+}
+
+footer .page ul {
+    overflow: hidden;
+}
+
+footer .page .item {
+    position: relative;
+    width: 25%;
+    display: inline-block;
+    /* float: left; */
+    margin-left: -5px;
+}
+
+footer .page .item .tips {
+    /* background-color: pink; */
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+footer .page .item .detail {
+    z-index: 2;
+    display: none;
+    background-color: #fff;
+    position: fixed;
+    width: 250px;
+    border-radius: 20px;
+    right: 20px;
+    left: 50%;
+    margin-left: -125px;
+    top: 200px;
+}
+
+footer .page .item .detail span {
+    display: block;
+    background-color: pink;
+    height: 60px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 20px 20px 0 0;
+}
+
+footer .page .item .detail .know {
+    /* position: absolute; */
+    background-color:skyblue;
+    height: 40px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+footer .page .item .detail p {
+    padding: 20px 20px
+}
+
+footer .page .item .tips :nth-child(n+2) {
+    text-align: center;
+}
+
+footer .page .item .tips :nth-child(3) {
+    padding-bottom: 20px;
+    font-size: 12px;
+    padding-top: 10px;
+    color: #ccc;
+}
+
+footer .page1 ul :nth-child(4) {
+    border-right: 1px solid #ccc;
+}
+
+footer .page1 ul :nth-child(8) {
+    border-right: 1px solid #ccc;
+}
+
+
+
+footer .page .item .tips div {
+    background-image: url(../images/jingling.png);
+    background-position: -48px -78px;
+    background-size: 156px 142px !important;
+    width: 23px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+footer .page1 {
+    /* position: relative; */
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+footer .page2 {
+    /* position: relative; */
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.point ol li{
+    width: 13px;
+    height: 5px;
+    margin-top: 10px;
+    background-color:  #ccc;
+    display: inline-block;
+    margin-left: 5px;
+    border-radius: 2px;
+}
+.point ol :nth-child(1){
+    margin-left: 45%;
+    background-color:rgb(125, 124, 124);
+}
+.declaration {
+    margin: 30px 20px;
+}
+
+.declaration a {
+    padding-left: 30%;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.declaration p {
+    margin-top: 10px;
+    font-size: xx-small;
+    color: #ccc;
+    text-align: center;
+}
